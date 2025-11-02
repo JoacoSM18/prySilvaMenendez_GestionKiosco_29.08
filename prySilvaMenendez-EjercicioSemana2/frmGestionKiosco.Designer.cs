@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionKiosco));
             txtNombre = new TextBox();
             txtCodigo = new TextBox();
             btnModificar = new RadioButton();
@@ -44,24 +45,30 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(251, 252);
+            txtNombre.Font = new Font("Microsoft Sans Serif", 10F);
+            txtNombre.Location = new Point(410, 394);
+            txtNombre.Margin = new Padding(4, 5, 4, 5);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(100, 23);
+            txtNombre.Size = new Size(145, 30);
             txtNombre.TabIndex = 11;
             // 
             // txtCodigo
             // 
-            txtCodigo.Location = new Point(251, 187);
+            txtCodigo.Font = new Font("Microsoft Sans Serif", 10F);
+            txtCodigo.Location = new Point(410, 302);
+            txtCodigo.Margin = new Padding(4, 5, 4, 5);
             txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(100, 23);
+            txtCodigo.Size = new Size(145, 30);
             txtCodigo.TabIndex = 10;
             // 
             // btnModificar
             // 
             btnModificar.AutoSize = true;
-            btnModificar.Location = new Point(54, 107);
+            btnModificar.Font = new Font("Microsoft Sans Serif", 9F);
+            btnModificar.Location = new Point(229, 217);
+            btnModificar.Margin = new Padding(4, 5, 4, 5);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(146, 19);
+            btnModificar.Size = new Size(212, 26);
             btnModificar.TabIndex = 12;
             btnModificar.TabStop = true;
             btnModificar.Text = "Modificar Un Producto";
@@ -71,27 +78,33 @@
             // lblCodigo
             // 
             lblCodigo.AutoSize = true;
-            lblCodigo.Location = new Point(54, 187);
+            lblCodigo.Font = new Font("Microsoft Sans Serif", 10F);
+            lblCodigo.Location = new Point(86, 307);
+            lblCodigo.Margin = new Padding(4, 0, 4, 0);
             lblCodigo.Name = "lblCodigo";
-            lblCodigo.Size = new Size(170, 15);
+            lblCodigo.Size = new Size(279, 25);
             lblCodigo.TabIndex = 3;
             lblCodigo.Text = "Ingrese el Codigo del Producto";
             // 
             // lblProducto
             // 
             lblProducto.AutoSize = true;
-            lblProducto.Location = new Point(49, 255);
+            lblProducto.Font = new Font("Microsoft Sans Serif", 10F);
+            lblProducto.Location = new Point(86, 399);
+            lblProducto.Margin = new Padding(4, 0, 4, 0);
             lblProducto.Name = "lblProducto";
-            lblProducto.Size = new Size(175, 15);
+            lblProducto.Size = new Size(285, 25);
             lblProducto.TabIndex = 4;
             lblProducto.Text = "Ingrese el Nombre del Producto";
             // 
             // btnAgregar
             // 
             btnAgregar.AutoSize = true;
-            btnAgregar.Location = new Point(290, 107);
+            btnAgregar.Font = new Font("Microsoft Sans Serif", 9F);
+            btnAgregar.Location = new Point(31, 173);
+            btnAgregar.Margin = new Padding(4, 5, 4, 5);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(137, 19);
+            btnAgregar.Size = new Size(204, 26);
             btnAgregar.TabIndex = 13;
             btnAgregar.TabStop = true;
             btnAgregar.Text = "Agregar Un Producto";
@@ -100,9 +113,11 @@
             // btnEliminar
             // 
             btnEliminar.AutoSize = true;
-            btnEliminar.Location = new Point(173, 132);
+            btnEliminar.Font = new Font("Microsoft Sans Serif", 9F);
+            btnEliminar.Location = new Point(433, 173);
+            btnEliminar.Margin = new Padding(4, 5, 4, 5);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(138, 19);
+            btnEliminar.Size = new Size(204, 26);
             btnEliminar.TabIndex = 14;
             btnEliminar.TabStop = true;
             btnEliminar.Text = "Eliminar Un Producto";
@@ -111,28 +126,32 @@
             // lbBienvenida
             // 
             lbBienvenida.AutoSize = true;
-            lbBienvenida.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lbBienvenida.Location = new Point(72, 18);
+            lbBienvenida.Font = new Font("Segoe UI", 20F, FontStyle.Bold | FontStyle.Underline);
+            lbBienvenida.Location = new Point(70, 22);
+            lbBienvenida.Margin = new Padding(4, 0, 4, 0);
             lbBienvenida.Name = "lbBienvenida";
-            lbBienvenida.Size = new Size(341, 37);
+            lbBienvenida.Size = new Size(505, 54);
             lbBienvenida.TabIndex = 7;
             lbBienvenida.Text = "BIENVENIDO AL SISTEMA";
             // 
             // lblAccion
             // 
             lblAccion.AutoSize = true;
-            lblAccion.Location = new Point(125, 67);
+            lblAccion.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblAccion.Location = new Point(173, 92);
+            lblAccion.Margin = new Padding(4, 0, 4, 0);
             lblAccion.Name = "lblAccion";
-            lblAccion.Size = new Size(208, 15);
+            lblAccion.Size = new Size(302, 45);
             lblAccion.TabIndex = 8;
-            lblAccion.Text = "Seleccione la Accion Que Desea Hacer";
+            lblAccion.Text = "¿Que Desea Hacer?";
             // 
             // btnAceptar
             // 
-            btnAceptar.Font = new Font("Segoe UI", 14F);
-            btnAceptar.Location = new Point(328, 367);
+            btnAceptar.Font = new Font("Microsoft Sans Serif", 9F);
+            btnAceptar.Location = new Point(458, 579);
+            btnAceptar.Margin = new Padding(4, 5, 4, 5);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(99, 36);
+            btnAceptar.Size = new Size(141, 36);
             btnAceptar.TabIndex = 15;
             btnAceptar.Text = "&ACEPTAR";
             btnAceptar.UseVisualStyleBackColor = true;
@@ -141,26 +160,31 @@
             // lblAgregado
             // 
             lblAgregado.AutoSize = true;
-            lblAgregado.Location = new Point(49, 318);
+            lblAgregado.Font = new Font("Microsoft Sans Serif", 10F);
+            lblAgregado.Location = new Point(86, 490);
+            lblAgregado.Margin = new Padding(4, 0, 4, 0);
             lblAgregado.Name = "lblAgregado";
-            lblAgregado.Size = new Size(178, 15);
+            lblAgregado.Size = new Size(295, 25);
             lblAgregado.TabIndex = 16;
             lblAgregado.Text = "Ingrese Lo Que Quiere Modificar";
             lblAgregado.Visible = false;
             // 
             // txtAgregado
             // 
-            txtAgregado.Location = new Point(251, 310);
+            txtAgregado.Font = new Font("Microsoft Sans Serif", 10F);
+            txtAgregado.Location = new Point(410, 484);
+            txtAgregado.Margin = new Padding(4, 5, 4, 5);
             txtAgregado.Name = "txtAgregado";
-            txtAgregado.Size = new Size(103, 23);
+            txtAgregado.Size = new Size(145, 30);
             txtAgregado.TabIndex = 17;
             txtAgregado.Visible = false;
             // 
             // frmGestionKiosco
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(457, 424);
+            BackColor = Color.YellowGreen;
+            ClientSize = new Size(650, 629);
             Controls.Add(txtAgregado);
             Controls.Add(lblAgregado);
             Controls.Add(btnAceptar);
@@ -173,6 +197,9 @@
             Controls.Add(btnModificar);
             Controls.Add(txtCodigo);
             Controls.Add(txtNombre);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
             Name = "frmGestionKiosco";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Formulario Gestion de Inventario \"Kiosco 10\"";
