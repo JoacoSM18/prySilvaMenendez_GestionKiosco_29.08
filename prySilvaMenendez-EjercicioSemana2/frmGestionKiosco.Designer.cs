@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionKiosco));
             txtNombre = new TextBox();
-            txtCodigo = new TextBox();
             btnModificar = new RadioButton();
             lblCodigo = new Label();
             lblProducto = new Label();
@@ -40,27 +39,20 @@
             lblAccion = new Label();
             btnAceptar = new Button();
             lblAgregado = new Label();
-            txtAgregado = new TextBox();
+            txtNuevoNombre = new TextBox();
             lblAgregado2 = new Label();
+            mskCodigo = new MaskedTextBox();
+            mskNuevoCodigo = new MaskedTextBox();
             SuspendLayout();
             // 
             // txtNombre
             // 
             txtNombre.Font = new Font("Microsoft Sans Serif", 10F);
-            txtNombre.Location = new Point(410, 354);
+            txtNombre.Location = new Point(405, 354);
             txtNombre.Margin = new Padding(4, 5, 4, 5);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(145, 30);
+            txtNombre.Size = new Size(155, 30);
             txtNombre.TabIndex = 11;
-            // 
-            // txtCodigo
-            // 
-            txtCodigo.Font = new Font("Microsoft Sans Serif", 10F);
-            txtCodigo.Location = new Point(410, 274);
-            txtCodigo.Margin = new Padding(4, 5, 4, 5);
-            txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(145, 30);
-            txtCodigo.TabIndex = 10;
             // 
             // btnModificar
             // 
@@ -172,15 +164,15 @@
             lblAgregado.Text = "Ingrese el Nuevo Codigo\r\n\r\n";
             lblAgregado.Visible = false;
             // 
-            // txtAgregado
+            // txtNuevoNombre
             // 
-            txtAgregado.Font = new Font("Microsoft Sans Serif", 10F);
-            txtAgregado.Location = new Point(410, 426);
-            txtAgregado.Margin = new Padding(4, 5, 4, 5);
-            txtAgregado.Name = "txtAgregado";
-            txtAgregado.Size = new Size(145, 30);
-            txtAgregado.TabIndex = 17;
-            txtAgregado.Visible = false;
+            txtNuevoNombre.Font = new Font("Microsoft Sans Serif", 10F);
+            txtNuevoNombre.Location = new Point(405, 513);
+            txtNuevoNombre.Margin = new Padding(4, 5, 4, 5);
+            txtNuevoNombre.Name = "txtNuevoNombre";
+            txtNuevoNombre.Size = new Size(155, 30);
+            txtNuevoNombre.TabIndex = 17;
+            txtNuevoNombre.Visible = false;
             // 
             // lblAgregado2
             // 
@@ -194,14 +186,38 @@
             lblAgregado2.Text = "Ingrese el Nuevo Nombre";
             lblAgregado2.Visible = false;
             // 
+            // mskCodigo
+            // 
+            mskCodigo.Location = new Point(405, 273);
+            mskCodigo.Mask = "99999";
+            mskCodigo.Name = "mskCodigo";
+            mskCodigo.Size = new Size(155, 31);
+            mskCodigo.TabIndex = 19;
+            mskCodigo.TextAlign = HorizontalAlignment.Center;
+            mskCodigo.ValidatingType = typeof(int);
+            mskCodigo.Click += mskCodigo_Click;
+            // 
+            // mskNuevoCodigo
+            // 
+            mskNuevoCodigo.Location = new Point(405, 428);
+            mskNuevoCodigo.Mask = "99999";
+            mskNuevoCodigo.Name = "mskNuevoCodigo";
+            mskNuevoCodigo.Size = new Size(155, 31);
+            mskNuevoCodigo.TabIndex = 20;
+            mskNuevoCodigo.TextAlign = HorizontalAlignment.Center;
+            mskNuevoCodigo.ValidatingType = typeof(int);
+            mskNuevoCodigo.Click += mskNuevoCodigo_Click;
+            // 
             // frmGestionKiosco
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.YellowGreen;
             ClientSize = new Size(650, 629);
+            Controls.Add(mskNuevoCodigo);
+            Controls.Add(mskCodigo);
             Controls.Add(lblAgregado2);
-            Controls.Add(txtAgregado);
+            Controls.Add(txtNuevoNombre);
             Controls.Add(lblAgregado);
             Controls.Add(btnAceptar);
             Controls.Add(lblAccion);
@@ -211,7 +227,6 @@
             Controls.Add(lblProducto);
             Controls.Add(lblCodigo);
             Controls.Add(btnModificar);
-            Controls.Add(txtCodigo);
             Controls.Add(txtNombre);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -237,7 +252,9 @@
         private Label lblAccion;
         private Button btnAceptar;
         private Label lblAgregado;
-        private TextBox txtAgregado;
+        private TextBox txtNuevoNombre;
         private Label lblAgregado2;
+        private MaskedTextBox mskCodigo;
+        private MaskedTextBox mskNuevoCodigo;
     }
 }
