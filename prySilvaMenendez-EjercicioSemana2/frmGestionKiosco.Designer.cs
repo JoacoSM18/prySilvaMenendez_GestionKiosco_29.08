@@ -41,12 +41,13 @@
             btnAceptar = new Button();
             lblAgregado = new Label();
             txtAgregado = new TextBox();
+            lblAgregado2 = new Label();
             SuspendLayout();
             // 
             // txtNombre
             // 
             txtNombre.Font = new Font("Microsoft Sans Serif", 10F);
-            txtNombre.Location = new Point(410, 394);
+            txtNombre.Location = new Point(410, 354);
             txtNombre.Margin = new Padding(4, 5, 4, 5);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(145, 30);
@@ -55,7 +56,7 @@
             // txtCodigo
             // 
             txtCodigo.Font = new Font("Microsoft Sans Serif", 10F);
-            txtCodigo.Location = new Point(410, 302);
+            txtCodigo.Location = new Point(410, 274);
             txtCodigo.Margin = new Padding(4, 5, 4, 5);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(145, 30);
@@ -65,7 +66,7 @@
             // 
             btnModificar.AutoSize = true;
             btnModificar.Font = new Font("Microsoft Sans Serif", 9F);
-            btnModificar.Location = new Point(229, 217);
+            btnModificar.Location = new Point(227, 199);
             btnModificar.Margin = new Padding(4, 5, 4, 5);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(212, 26);
@@ -79,7 +80,7 @@
             // 
             lblCodigo.AutoSize = true;
             lblCodigo.Font = new Font("Microsoft Sans Serif", 10F);
-            lblCodigo.Location = new Point(86, 307);
+            lblCodigo.Location = new Point(86, 279);
             lblCodigo.Margin = new Padding(4, 0, 4, 0);
             lblCodigo.Name = "lblCodigo";
             lblCodigo.Size = new Size(279, 25);
@@ -90,7 +91,7 @@
             // 
             lblProducto.AutoSize = true;
             lblProducto.Font = new Font("Microsoft Sans Serif", 10F);
-            lblProducto.Location = new Point(86, 399);
+            lblProducto.Location = new Point(86, 359);
             lblProducto.Margin = new Padding(4, 0, 4, 0);
             lblProducto.Name = "lblProducto";
             lblProducto.Size = new Size(285, 25);
@@ -101,7 +102,7 @@
             // 
             btnAgregar.AutoSize = true;
             btnAgregar.Font = new Font("Microsoft Sans Serif", 9F);
-            btnAgregar.Location = new Point(31, 173);
+            btnAgregar.Location = new Point(27, 163);
             btnAgregar.Margin = new Padding(4, 5, 4, 5);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(204, 26);
@@ -109,12 +110,13 @@
             btnAgregar.TabStop = true;
             btnAgregar.Text = "Agregar Un Producto";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.CheckedChanged += btnAgregar_CheckedChanged;
             // 
             // btnEliminar
             // 
             btnEliminar.AutoSize = true;
             btnEliminar.Font = new Font("Microsoft Sans Serif", 9F);
-            btnEliminar.Location = new Point(433, 173);
+            btnEliminar.Location = new Point(433, 163);
             btnEliminar.Margin = new Padding(4, 5, 4, 5);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(204, 26);
@@ -122,6 +124,7 @@
             btnEliminar.TabStop = true;
             btnEliminar.Text = "Eliminar Un Producto";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.CheckedChanged += btnEliminar_CheckedChanged;
             // 
             // lbBienvenida
             // 
@@ -161,23 +164,35 @@
             // 
             lblAgregado.AutoSize = true;
             lblAgregado.Font = new Font("Microsoft Sans Serif", 10F);
-            lblAgregado.Location = new Point(86, 490);
+            lblAgregado.Location = new Point(86, 442);
             lblAgregado.Margin = new Padding(4, 0, 4, 0);
             lblAgregado.Name = "lblAgregado";
-            lblAgregado.Size = new Size(295, 25);
+            lblAgregado.Size = new Size(227, 50);
             lblAgregado.TabIndex = 16;
-            lblAgregado.Text = "Ingrese Lo Que Quiere Modificar";
+            lblAgregado.Text = "Ingrese el Nuevo Codigo\r\n\r\n";
             lblAgregado.Visible = false;
             // 
             // txtAgregado
             // 
             txtAgregado.Font = new Font("Microsoft Sans Serif", 10F);
-            txtAgregado.Location = new Point(410, 484);
+            txtAgregado.Location = new Point(410, 426);
             txtAgregado.Margin = new Padding(4, 5, 4, 5);
             txtAgregado.Name = "txtAgregado";
             txtAgregado.Size = new Size(145, 30);
             txtAgregado.TabIndex = 17;
             txtAgregado.Visible = false;
+            // 
+            // lblAgregado2
+            // 
+            lblAgregado2.AutoSize = true;
+            lblAgregado2.Font = new Font("Microsoft Sans Serif", 10F);
+            lblAgregado2.Location = new Point(86, 518);
+            lblAgregado2.Margin = new Padding(4, 0, 4, 0);
+            lblAgregado2.Name = "lblAgregado2";
+            lblAgregado2.Size = new Size(233, 25);
+            lblAgregado2.TabIndex = 18;
+            lblAgregado2.Text = "Ingrese el Nuevo Nombre";
+            lblAgregado2.Visible = false;
             // 
             // frmGestionKiosco
             // 
@@ -185,6 +200,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.YellowGreen;
             ClientSize = new Size(650, 629);
+            Controls.Add(lblAgregado2);
             Controls.Add(txtAgregado);
             Controls.Add(lblAgregado);
             Controls.Add(btnAceptar);
@@ -203,6 +219,7 @@
             Name = "frmGestionKiosco";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Formulario Gestion de Inventario \"Kiosco 10\"";
+            Load += frmGestionKiosco_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -221,5 +238,6 @@
         private Button btnAceptar;
         private Label lblAgregado;
         private TextBox txtAgregado;
+        private Label lblAgregado2;
     }
 }

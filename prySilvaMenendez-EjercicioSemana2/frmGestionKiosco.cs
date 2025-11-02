@@ -9,11 +9,30 @@ namespace prySilvaMenendez_EjercicioSemana2
             InitializeComponent();
         }
 
+        private void frmGestionKiosco_Load(object sender, EventArgs e)
+        {
+            lblAgregado.Visible = false;
+            txtAgregado.Visible = false;
+            lblAgregado.Enabled = false;
+            txtAgregado.Enabled = false;
+        }
+        private void btnAgregar_CheckedChanged(object sender, EventArgs e)
+        {
+            lblAgregado.Enabled = false;
+            txtAgregado.Enabled = false;
+        }
+        private void btnEliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            lblAgregado.Enabled = false;
+            txtAgregado.Enabled = false;
+        }
         private void btnModificar_CheckedChanged(object sender, EventArgs e)
         {
             if (btnModificar.Checked)
             {
-                lblAgregado.Visible = true;
+                lblAgregado.Enabled = true;
+                txtAgregado.Enabled = true;
+                lblAgregado.Visible = true; 
                 txtAgregado.Visible = true;
             }
             else
@@ -21,31 +40,43 @@ namespace prySilvaMenendez_EjercicioSemana2
                 lblAgregado.Enabled = false;
                 txtAgregado.Enabled = false;
             }
-
-
-
-
         }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtAgregado.Text == "" || txtCodigo.Text == "" || txtNombre.Text == "")
+            if (btnAgregar.Checked)
             {
-                
-                if (btnAgregar.Checked)
+                if (txtNombre.Text == "" || txtCodigo.Text == "")
                 {
-                    MessageBox.Show("Producto Agregado Correctamente");
+                    MessageBox.Show("Por Favor Complete Todos Los Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                if (btnEliminar.Checked)
+                else
                 {
-                    MessageBox.Show("Producto Eliminado Correctamente");
-                }
-                if (btnModificar.Checked)
-                {
-                    MessageBox.Show("Producto Modificado Correctamente");
+                    MessageBox.Show("Producto Agregado Correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+            if (btnEliminar.Checked)
+            {
+                if (txtNombre.Text == "" || txtCodigo.Text == "")
+                {
+                    MessageBox.Show("Por Favor Complete Todos Los Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Producto Eliminado Correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            if (btnModificar.Checked)
+            {
 
+                if (txtNombre.Text == "" || txtCodigo.Text == "" || txtAgregado.Text == "")
+                {
+                    MessageBox.Show("Por Favor Complete Todos Los Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Producto Editado Correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }
